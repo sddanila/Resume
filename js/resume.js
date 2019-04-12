@@ -1,3 +1,10 @@
+'use strict';
+
+const today = new Date();
+var date_to_reply = new Date('2018-03-30');
+var timeinmilisec = today.getTime() - date_to_reply.getTime() ;
+const numOfDays = Math.floor(timeinmilisec / (1000 * 60 * 60 * 24));
+
 (function($) {
   "use strict"; // Start of use strict
 
@@ -26,5 +33,8 @@
   });
 
   $('.carousel').carousel({ interval: 3500 })
+
+  // updates Duolingo day count
+  $('#duolingo-counter').html(numOfDays)
 
 })(jQuery); // End of use strict
